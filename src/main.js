@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import 'phoenix-styles/dist/phoenix-styles.css'
+import 'phoenix-styles/less/phoenix-styles.less'
 
 // 第一种：全局引入
 import SwanUI from 'swan-ui'

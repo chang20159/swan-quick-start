@@ -29,7 +29,23 @@ module.exports = {
       },
       {
           test:/\.less$/,
-          use:  ExtractTextPlugin.extract('less-loader')
+          use:  ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              { 
+                loader: 'css-loader',
+                options: {
+                  sourceMap: true,
+                } 
+              },
+              { 
+                loader: 'less-loader',
+                options: {
+                  sourceMap: true,
+                } 
+              }
+            ]
+          })
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
